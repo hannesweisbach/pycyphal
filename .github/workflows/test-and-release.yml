@@ -73,10 +73,11 @@ jobs:
         shell: bash
 
       - name: Save logs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: PyCyphal-${{ matrix.os }}-python-${{ matrix.python }}
           path: .nox/*/*/*.log
+          include-hidden-files: true
           retention-days: 7
 
   pycyphal-release:
